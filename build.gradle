@@ -12,6 +12,8 @@ apply plugin: 'idea'
 
 sourceCompatibility = 1.5
 
+jettyRun.contextPath = '/'
+
 repositories {
     mavenCentral()
 }

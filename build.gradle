@@ -8,6 +8,7 @@ task wrapper(type: Wrapper) {
 
 apply plugin: 'java'
 apply plugin: 'jetty'
+apply plugin: 'idea'
 
 sourceCompatibility = 1.5
 
@@ -16,5 +17,6 @@ repositories {
 }
 
 dependencies {
+    compile 'org.springframework:spring-webmvc:4.1.7.RELEASE'
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }

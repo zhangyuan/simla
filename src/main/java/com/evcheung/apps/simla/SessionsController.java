@@ -14,9 +14,9 @@ public class SessionsController {
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
     public String create(HttpServletRequest request, @RequestParam(value = "username", required = false) String username){
-        User user = new User();
-        user.setUsername(username);
-        request.getSession().setAttribute("user", user);
+        SessionUser sessionUser = new SessionUser();
+        sessionUser.setUsername(username);
+        request.getSession().setAttribute("user", sessionUser);
         return "SignIn";
     }
 }

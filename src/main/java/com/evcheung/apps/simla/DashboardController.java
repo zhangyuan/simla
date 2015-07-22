@@ -13,11 +13,15 @@ public class DashboardController {
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
     public String index(HttpServletRequest request) {
-        User user = (User)request.getSession().getAttribute("user");
-        if (user == null) {
+        SessionUser sessionUser = getSessionUser(request);
+        if (sessionUser == null) {
             return "It Works!";
         } else {
-            return user.getUsername();
+            return sessionUser.getUsername();
         }
+    }
+
+    private SessionUser getSessionUser(HttpServletRequest request) {
+        return (SessionUser)request.getSession().getAttribute("user");
     }
 }

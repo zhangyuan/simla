@@ -1,6 +1,6 @@
 package com.evcheung.apps.simla;
 
-public class User {
+public class SessionUser {
     public String getUsername() {
         return username;
     }

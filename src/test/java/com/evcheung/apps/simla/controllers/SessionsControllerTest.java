@@ -1,4 +1,4 @@
-package com.evcheung.apps.simla;
+package com.evcheung.apps.simla.controllers;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,22 +22,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 @ContextConfiguration("classpath:spring-servlet.xml")
-public class DashboardControllerTest {
+public class SessionsControllerTest {
     @Autowired
     private WebApplicationContext wac;
 
     private MockMvc mockMvc;
 
     @Test
-    public void dashboard_should_return_ok() throws Exception {
-        mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
-        mockMvc.perform(get("/"))
-                .andExpect(content().string("It Works!"))
-                .andExpect(status().isOk());
-    }
-
-    @Test
-    public void dashboard_should_return_username_if_signed_in() throws Exception {
+    public void dashboard_should_return_username_after_signed_in() throws Exception {
         mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
         MockHttpServletRequestBuilder request = post("/sessions");
         request.param("username", "foo");

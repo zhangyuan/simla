@@ -1,4 +1,4 @@
-package com.evcheung.apps.simla;
+package com.evcheung.apps.simla.models;
 
 public class SessionUser {
     public String getUsername() {

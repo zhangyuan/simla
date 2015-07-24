@@ -16,6 +16,8 @@ public class MailTemplateService {
 
         Template template = handlebars.compile("templates/mail.html");
 
-        return template.apply("Handlebars.java");
+        MailParameter parameter = new MailParameter();
+        parameter.setUsername("Evan");
+        return template.apply(parameter);
     }
 }

@@ -22,7 +22,7 @@ public class MailTemplateServiceTest {
     @Test
     public void should_render_html() throws IOException {
         String render = service.apply();
-        assertEquals("<h1>Handlebars.java</h1>", render);
+        assertEquals("<h1>Evan</h1>", render);
     }
 
 }

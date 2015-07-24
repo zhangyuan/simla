@@ -1,9 +1,6 @@
 package com.evcheung.apps.simla.services;
 
-import org.apache.commons.mail.DefaultAuthenticator;
-import org.apache.commons.mail.Email;
 import org.apache.commons.mail.EmailException;
-import org.apache.commons.mail.SimpleEmail;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.PropertySource;
@@ -31,19 +28,20 @@ public class MailService {
     private int port;
 
     public void apply() throws EmailException {
-        Email email = new SimpleEmail();
 
-        email.setHostName(hostname);
-        email.setSmtpPort(port);
-        email.setAuthenticator(new DefaultAuthenticator(username, password));
-        email.setSSLOnConnect(true);
-        email.setFrom(from);
-        email.addTo(to);
-
-        email.setSubject("Test Mail");
-        email.setMsg("This is just a testing mail");
-
-        email.send();
+//        Email email = new SimpleEmail();
+//
+//        email.setHostName(hostname);
+//        email.setSmtpPort(port);
+//        email.setAuthenticator(new DefaultAuthenticator(username, password));
+//        email.setSSLOnConnect(true);
+//        email.setFrom(from);
+//        email.addTo(to);
+//
+//        email.setSubject("Test Mail");
+//        email.setMsg("This is just a testing mail");
+//
+//        email.send();
     }
 
     @Bean

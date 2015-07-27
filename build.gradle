@@ -23,6 +23,7 @@ dependencies {
     compile 'org.springframework:spring-webmvc:4.1.7.RELEASE'
     compile 'javax.servlet:javax.servlet-api:3.1.0'
     compile 'com.github.jknack:handlebars:2.2.3'
+    compile 'org.apache.velocity:velocity:1.7'
     testCompile 'javax.servlet:javax.servlet-api:3.1.0'
     testCompile 'org.springframework:spring-test:4.1.7.RELEASE'
     testCompile group: 'junit', name: 'junit', version: '4.11'

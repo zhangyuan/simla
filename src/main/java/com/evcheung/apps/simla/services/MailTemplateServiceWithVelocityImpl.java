@@ -15,9 +15,12 @@ public class MailTemplateServiceWithVelocityImpl implements MailTemplateService 
         VelocityEngine ve = getVelocityEngine();
         Template template = ve.getTemplate("templates/mail.html.vm");
 
+        MailParameter parameter = new MailParameter();
+        parameter.setUsername("Evan");
+
         VelocityContext context = new VelocityContext();
 
-        context.put("username", "Evan");
+        context.put("c", parameter);
 
         StringWriter writer = new StringWriter();
 
@@ -30,7 +33,6 @@ public class MailTemplateServiceWithVelocityImpl implements MailTemplateService 
         VelocityEngine ve = new VelocityEngine();
         ve.setProperty(RuntimeConstants.RESOURCE_LOADER, "classpath");
         ve.setProperty("classpath.resource.loader.class", ClasspathResourceLoader.class.getName());
-
         ve.init();
         return ve;
     }

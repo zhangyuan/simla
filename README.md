@@ -1,7 +1,15 @@
 # simla
 An exercise with Spring MVC
 
-# Problems
+# Setup
+
+create the SMTP configuration
+
+```
+cp src/main/resources/mail.properties.sample src/main/resources/mail.properties
+```
+
+# Questions
 
 * How to setup gradle project with IntelliJ?
 * How does the `.gitignore` file look like in a Java/InteiilJ/gradle project?
